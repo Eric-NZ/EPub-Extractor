@@ -6,13 +6,55 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>753</width>
+    <height>545</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>8</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>ExtractorDialog</string>
   </property>
+  <widget class="QLabel" name="textTitle">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>20</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>21</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>EPub Extractor</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="subTitle">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>60</y>
+     <width>451</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Unlike most extensions that define a single file, an .epub is actually a compressed folder that contains many files. If you want it to be editable, you will first have to extract these files. This Epub Extractor helps with this.</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::PlainText</enum>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

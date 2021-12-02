@@ -16,7 +16,9 @@ HEADERS += \
     extractordialog.h
 
 FORMS += \
-    extractordialog.ui
+    extractordialog.ui \
+    filelistform.ui \
+    fileselectionform.ui
 
 TRANSLATIONS += \
     EPub-Extractor_zh_CN.ts
