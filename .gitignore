@@ -6,6 +6,9 @@
 # Self-added files
 Readme.txt
 
+# QtBuild files
+build-EPub-Extractor*/
+
 # User-specific files
 *.rsuser
 *.suo
