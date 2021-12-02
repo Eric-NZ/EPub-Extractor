@@ -6,6 +6,7 @@ ExtractorDialog::ExtractorDialog(QWidget *parent)
     , ui(new Ui::ExtractorDialog)
 {
     ui->setupUi(this);
+
 }
 
 ExtractorDialog::~ExtractorDialog()
