@@ -13,12 +13,14 @@ SOURCES += \
     extractordialog.cpp
 
 HEADERS += \
-    extractordialog.h
+    extractordialog.h \
+    ui_filelistform.h \
+    ui_filepickerform.h
 
 FORMS += \
     extractordialog.ui \
     filelistform.ui \
-    fileselectionform.ui
+    filepickerform.ui
 
 TRANSLATIONS += \
     EPub-Extractor_zh_CN.ts

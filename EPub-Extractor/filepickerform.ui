@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>FilePickerForm</class>
+ <widget class="QWidget" name="FilePickerForm">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>712</width>
-    <height>395</height>
+    <width>800</width>
+    <height>450</height>
    </rect>
   </property>
   <property name="windowTitle">

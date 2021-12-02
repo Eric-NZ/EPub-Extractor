@@ -2,6 +2,8 @@
 #define EXTRACTORDIALOG_H
 
 #include <QDialog>
+#include "ui_filelistform.h"
+#include "ui_filepickerform.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class ExtractorDialog; }
