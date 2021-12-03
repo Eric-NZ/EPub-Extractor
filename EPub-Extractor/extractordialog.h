@@ -3,6 +3,9 @@
 
 #include <QDialog>
 
+#include "filelistwidget.h"
+#include "filepickerwidget.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class ExtractorDialog; }
 QT_END_NAMESPACE
@@ -17,5 +20,9 @@ public:
 
 private:
     Ui::ExtractorDialog *ui;
+
+    FileListWidget * fileListWidget;
+    FilePickerWidget * filePickerWidget;
+
 };
 #endif // EXTRACTORDIALOG_H

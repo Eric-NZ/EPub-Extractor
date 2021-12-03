@@ -7,6 +7,13 @@ ExtractorDialog::ExtractorDialog(QWidget *parent)
 {
     ui->setupUi(this);
 
+    QStackedWidget * embededStackedWidget = ui->embededStackedWidget;
+    filePickerWidget = new FilePickerWidget(embededStackedWidget);
+    fileListWidget = new FileListWidget(embededStackedWidget);
+
+    embededStackedWidget->addWidget(fileListWidget);
+    embededStackedWidget->addWidget(filePickerWidget);
+    embededStackedWidget->setCurrentWidget(filePickerWidget);
 }
 
 ExtractorDialog::~ExtractorDialog()

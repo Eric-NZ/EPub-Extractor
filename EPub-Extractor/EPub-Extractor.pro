@@ -9,23 +9,20 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    filelistdialog.cpp \
-    filepickerdialog.cpp \
+    filelistwidget.cpp \
+    filepickerwidget.cpp \
     main.cpp \
-    extractordialog.cpp \
-    stackedwidget.cpp
+    extractordialog.cpp
 
 HEADERS += \
     extractordialog.h \
-    filelistdialog.h \
-    filepickerdialog.h \
-    stackedwidget.h
+    filelistwidget.h \
+    filepickerwidget.h
 
 FORMS += \
     extractordialog.ui \
-    filelistdialog.ui \
-    filepickerdialog.ui \
-    stackedwidget.ui
+    filelistwidget.ui \
+    filepickerwidget.ui
 
 TRANSLATIONS += \
     EPub-Extractor_zh_CN.ts

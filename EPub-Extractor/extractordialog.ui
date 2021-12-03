@@ -55,6 +55,18 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QStackedWidget" name="embededStackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>130</y>
+     <width>780</width>
+     <height>450</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="filePicker"/>
+   <widget class="QWidget" name="fileList"/>
+  </widget>
  </widget>
  <resources/>
  <connections/>
