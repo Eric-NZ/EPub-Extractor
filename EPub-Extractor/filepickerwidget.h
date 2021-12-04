@@ -3,6 +3,9 @@
 
 #include <QWidget>
 
+#include <QDebug>
+#include <QMenu>
+
 namespace Ui {
 class FilePickerWidget;
 }
@@ -17,6 +20,7 @@ public:
 
 private:
     Ui::FilePickerWidget *ui;
+    QMenu * pMenu;
 };
 
 #endif // FILEPICKERWIDGET_H
