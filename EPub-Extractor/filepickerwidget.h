@@ -21,6 +21,10 @@ public:
 private:
     Ui::FilePickerWidget *ui;
     QMenu * pMenu;
+
+private slots:
+    void selectSingleFile();
+    void selectFromFolder();
 };
 
 #endif // FILEPICKERWIDGET_H
