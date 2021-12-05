@@ -23,8 +23,12 @@ private:
     QMenu * pMenu;
 
 private slots:
-    void selectSingleFile();
+    void selectFile();
     void selectFromFolder();
+
+signals:
+    void fileSelected(QStringList fileNames);
+    void folderSelected(QString path);
 };
 
 #endif // FILEPICKERWIDGET_H

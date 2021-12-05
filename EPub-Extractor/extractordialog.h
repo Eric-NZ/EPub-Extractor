@@ -18,11 +18,15 @@ public:
     ExtractorDialog(QWidget *parent = nullptr);
     ~ExtractorDialog();
 
+public slots:
+    void onFileSelected(QStringList fileNames);
+    void onFolderSelected(QString path);
+
 private:
     Ui::ExtractorDialog *ui;
 
-    FileListWidget * fileListWidget;
-    FilePickerWidget * filePickerWidget;
+    FileListWidget * pFileListWidget;
+    FilePickerWidget * pFilePickerWidget;
 
 };
 #endif // EXTRACTORDIALOG_H

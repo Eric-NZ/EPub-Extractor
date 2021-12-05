@@ -2,6 +2,7 @@
 #include "ui_filepickerwidget.h"
 
 #include <QDebug>
+#include <QFileDialog>
 
 FilePickerWidget::FilePickerWidget(QWidget *parent) :
     QWidget(parent),
@@ -9,24 +10,27 @@ FilePickerWidget::FilePickerWidget(QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    qDebug()<<"parent: "<<parent->parent();
     pMenu = new QMenu(this);
-    QAction * pActionSingleFile = pMenu->addAction("Single File");
+    QAction * pActionSelectFile = pMenu->addAction("Select File");
     QAction * pActionFromFolder = pMenu->addAction("From Folder");
     // TODO: pMenu->addAction("From Cloud Drive");
 
     ui->buttonSelectFile->setMenu(pMenu);
 
-    connect(pActionSingleFile, SIGNAL(triggered()), this, SLOT(selectSingleFile()));
+    connect(pActionSelectFile, SIGNAL(triggered()), this, SLOT(selectFile()));
     connect(pActionFromFolder, SIGNAL(triggered()), this, SLOT(selectFromFolder()));
 }
 
-void FilePickerWidget::selectSingleFile(){
-    qDebug("selectSingleFile");
+void FilePickerWidget::selectFile(){
+    connect(this, SIGNAL(fileSelected(QStringList)), parent()->parent(), SLOT(onFileSelected(QStringList)));
+    QString fileName = QFileDialog::getOpenFileName(NULL, "Select *.epub File", ".", "*.epub");
+    emit fileSelected(QStringList(fileName));
 }
 
 void FilePickerWidget::selectFromFolder(){
-    qDebug("selectFromFolder");
+    connect(this, SIGNAL(folderSelected(QString)), parent()->parent(), SLOT(onFolderSelected(QString)));
+    QString path = QFileDialog::getExistingDirectory(NULL, "Select Folder", ".", QFileDialog::ShowDirsOnly);
+    emit folderSelected(path);
 }
 
 FilePickerWidget::~FilePickerWidget()
