@@ -23,6 +23,8 @@ public slots:
     void onFileSelected(QStringList filenames);
     void onFolderSelected(QString path);
 
+signals:
+    void showFiles(QStringList filenames);
 private:
     Ui::ExtractorDialog *ui;
     QStackedWidget * embededStackedWidget;
@@ -33,6 +35,7 @@ private:
     QStringList filenames;
 
     void fetchFilenamesInFolder(QString path);
+    void showSelectedFiles();
     void switchToList();
 };
 #endif // EXTRACTORDIALOG_H

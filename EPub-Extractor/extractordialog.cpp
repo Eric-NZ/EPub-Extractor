@@ -21,16 +21,26 @@ ExtractorDialog::ExtractorDialog(QWidget *parent)
 
 void ExtractorDialog::onFileSelected(QStringList filenames) {
     this->filenames = filenames;
-    switchToList();
+    showSelectedFiles();
 }
 
 void ExtractorDialog::onFolderSelected(QString path) {
     fetchFilenamesInFolder(path);
+    showSelectedFiles();
+}
+
+void ExtractorDialog::showSelectedFiles() {
+    if (this->filenames.size() <=0)
+        return;
+
+    connect(this, SIGNAL(showFiles(QStringList)), pFileListWidget, SLOT(onShowFiles(QStringList)));
+    emit showFiles(this->filenames);
     switchToList();
 }
 
 void ExtractorDialog::switchToList(){
-    embededStackedWidget->setCurrentWidget(pFileListWidget);
+    if (this->filenames.size() > 0)
+        embededStackedWidget->setCurrentWidget(pFileListWidget);
 }
 
 void ExtractorDialog::fetchFilenamesInFolder(QString path) {

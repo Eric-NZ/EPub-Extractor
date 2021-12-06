@@ -15,8 +15,13 @@ public:
     explicit FileListWidget(QWidget *parent = nullptr);
     ~FileListWidget();
 
+public slots:
+    void onShowFiles(QStringList filenames);
+
 private:
     Ui::FileListWidget *ui;
+
+    QStringList * pFilenames;
 };
 
 #endif // FILELISTWIDGET_H
