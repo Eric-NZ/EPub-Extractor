@@ -27,7 +27,7 @@ private slots:
     void selectFromFolder();
 
 signals:
-    void fileSelected(QStringList fileNames);
+    void fileSelected(QStringList filenames);
     void folderSelected(QString path);
 };
 

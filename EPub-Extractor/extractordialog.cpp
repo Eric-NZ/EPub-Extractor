@@ -2,6 +2,7 @@
 #include "ui_extractordialog.h"
 
 #include <QDebug>
+#include <QDir>
 
 ExtractorDialog::ExtractorDialog(QWidget *parent)
     : QDialog(parent)
@@ -18,18 +19,26 @@ ExtractorDialog::ExtractorDialog(QWidget *parent)
     embededStackedWidget->setCurrentWidget(pFilePickerWidget);
 }
 
-void ExtractorDialog::onFileSelected(QStringList fileNames) {
-    qDebug() << "file names: " << fileNames;
+void ExtractorDialog::onFileSelected(QStringList filenames) {
+    this->filenames = filenames;
     switchToList();
 }
 
 void ExtractorDialog::onFolderSelected(QString path) {
-    qDebug() << "path: " << path;
+    fetchFilenamesInFolder(path);
     switchToList();
 }
 
 void ExtractorDialog::switchToList(){
     embededStackedWidget->setCurrentWidget(pFileListWidget);
+}
+
+void ExtractorDialog::fetchFilenamesInFolder(QString path) {
+    QStringList filenames = QDir(path).entryList(QStringList() << "*.epub", QDir::Files);
+
+    for (int i = 0; i < filenames.size(); i++) {
+        this->filenames += path + "/" + filenames[i];
+    }
 }
 
 ExtractorDialog::~ExtractorDialog()

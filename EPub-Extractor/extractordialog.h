@@ -20,7 +20,7 @@ public:
     ~ExtractorDialog();
 
 public slots:
-    void onFileSelected(QStringList fileNames);
+    void onFileSelected(QStringList filenames);
     void onFolderSelected(QString path);
 
 private:
@@ -30,7 +30,9 @@ private:
     FileListWidget * pFileListWidget;
     FilePickerWidget * pFilePickerWidget;
 
+    QStringList filenames;
 
+    void fetchFilenamesInFolder(QString path);
     void switchToList();
 };
 #endif // EXTRACTORDIALOG_H
