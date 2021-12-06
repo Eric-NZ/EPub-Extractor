@@ -9,7 +9,7 @@ ExtractorDialog::ExtractorDialog(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QStackedWidget * embededStackedWidget = ui->embededStackedWidget;
+    embededStackedWidget = ui->embededStackedWidget;
     pFilePickerWidget = new FilePickerWidget(embededStackedWidget);
     pFileListWidget = new FileListWidget(embededStackedWidget);
 
@@ -20,10 +20,16 @@ ExtractorDialog::ExtractorDialog(QWidget *parent)
 
 void ExtractorDialog::onFileSelected(QStringList fileNames) {
     qDebug() << "file names: " << fileNames;
+    switchToList();
 }
 
 void ExtractorDialog::onFolderSelected(QString path) {
     qDebug() << "path: " << path;
+    switchToList();
+}
+
+void ExtractorDialog::switchToList(){
+    embededStackedWidget->setCurrentWidget(pFileListWidget);
 }
 
 ExtractorDialog::~ExtractorDialog()

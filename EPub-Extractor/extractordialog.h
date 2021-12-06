@@ -2,6 +2,7 @@
 #define EXTRACTORDIALOG_H
 
 #include <QDialog>
+#include <QStackedWidget>
 
 #include "filelistwidget.h"
 #include "filepickerwidget.h"
@@ -24,9 +25,12 @@ public slots:
 
 private:
     Ui::ExtractorDialog *ui;
+    QStackedWidget * embededStackedWidget;
 
     FileListWidget * pFileListWidget;
     FilePickerWidget * pFilePickerWidget;
 
+
+    void switchToList();
 };
 #endif // EXTRACTORDIALOG_H

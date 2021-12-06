@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     filelistwidget.cpp \
+    filepickerthread.cpp \
     filepickerwidget.cpp \
     main.cpp \
     extractordialog.cpp
@@ -17,6 +18,7 @@ SOURCES += \
 HEADERS += \
     extractordialog.h \
     filelistwidget.h \
+    filepickerthread.h \
     filepickerwidget.h
 
 FORMS += \

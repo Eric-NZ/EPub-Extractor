@@ -49,22 +49,6 @@
     <string>Add More Files</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboOptions">
-   <property name="geometry">
-    <rect>
-     <x>154</x>
-     <y>70</y>
-     <width>24</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>24</width>
-     <height>16777215</height>
-    </size>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections/>
