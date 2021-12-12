@@ -20,7 +20,8 @@ ExtractorDialog::ExtractorDialog(QWidget *parent)
 }
 
 void ExtractorDialog::onFileSelected(QStringList filenames) {
-    this->filenames = filenames;
+    this->filenames.clear();
+    this->filenames.append(filenames);
     showSelectedFiles();
 }
 
@@ -34,8 +35,8 @@ void ExtractorDialog::showSelectedFiles() {
         return;
 
     connect(this, SIGNAL(showFiles(QStringList)), pFileListWidget, SLOT(onShowFiles(QStringList)));
-    emit showFiles(this->filenames);
     switchToList();
+    emit showFiles(this->filenames);
 }
 
 void ExtractorDialog::switchToList(){
@@ -46,6 +47,7 @@ void ExtractorDialog::switchToList(){
 void ExtractorDialog::fetchFilenamesInFolder(QString path) {
     QStringList filenames = QDir(path).entryList(QStringList() << "*.epub", QDir::Files);
 
+    this->filenames.clear();
     for (int i = 0; i < filenames.size(); i++) {
         this->filenames += path + "/" + filenames[i];
     }

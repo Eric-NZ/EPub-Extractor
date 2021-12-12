@@ -24,12 +24,20 @@ FilePickerWidget::FilePickerWidget(QWidget *parent) :
 void FilePickerWidget::selectFile(){
     connect(this, SIGNAL(fileSelected(QStringList)), parent()->parent(), SLOT(onFileSelected(QStringList)));
     QStringList filenames = QFileDialog::getOpenFileNames(NULL, "Select *.epub File", "/", "*.epub");
+    if (filenames.isEmpty()) {
+        disconnect(this, SIGNAL(fileSelected(QStringList)), parent()->parent(), SLOT(onFileSelected(QStringList)));
+        return;
+    }
     emit fileSelected(filenames);
 }
 
 void FilePickerWidget::selectFromFolder(){
     connect(this, SIGNAL(folderSelected(QString)), parent()->parent(), SLOT(onFolderSelected(QString)));
     QString path = QFileDialog::getExistingDirectory(NULL, "Select Folder", "/", QFileDialog::ShowDirsOnly);
+    if (path.isEmpty()) {
+        disconnect(this, SIGNAL(folderSelected(QString)), parent()->parent(), SLOT(onFolderSelected(QString)));
+        return;
+    }
     emit folderSelected(path);
 }
 
